@@ -50,11 +50,6 @@ object AppModule {
         return DeleteNote(noteRepository)
     }
 
-    @Singleton
-    @Provides
-    fun provideUpsertNote(noteRepository: NoteRepository): UpsertNote {
-        return UpsertNote(noteRepository)
-    }
 
     @Singleton
     @Provides
@@ -70,6 +65,12 @@ object AppModule {
     @Provides
     fun provideImagesRepository(imagesApi: ImagesApi): ImagesRepository {
         return ImagesRepositoryImpl(imagesApi)
+    }
+
+    @Singleton
+    @Provides
+    fun provideUpsertNote(noteRepository: NoteRepository): UpsertNote {
+        return UpsertNote(noteRepository)
     }
 
     @Singleton

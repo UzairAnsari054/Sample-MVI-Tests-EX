@@ -49,11 +49,6 @@ object TestAppModule {
         return DeleteNote(noteRepository)
     }
 
-    @Singleton
-    @Provides
-    fun provideUpsertNote(noteRepository: NoteRepository): UpsertNote {
-        return UpsertNote(noteRepository)
-    }
 
     @Singleton
     @Provides
@@ -69,6 +64,12 @@ object TestAppModule {
     @Provides
     fun provideImagesRepository(): ImagesRepository {
         return FakeAndroidImagesRepository()
+    }
+
+    @Singleton
+    @Provides
+    fun provideUpsertNote(noteRepository: NoteRepository): UpsertNote {
+        return UpsertNote(noteRepository)
     }
 
     @Singleton
